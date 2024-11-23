@@ -1,87 +1,152 @@
+/* Fuentes personalizadas */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5; /* Fondo claro */
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    padding-bottom: 60px; /* Espacio para el footer fijo */
+    background-color: #f0f4f8;
+    color: #2f4858;
 }
 
+/* Importar la fuente Montserrat desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* Encabezado */
 .header {
-    background-color: #66bb6a; /* Verde suave */
-    color: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Alinea el título a la izquierda y la barra de navegación a la derecha */
     align-items: center;
-    padding: 20px 40px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #2dad75; /* Azul oscuro */
+    color: #ffffff;
+    padding: 20px;
 }
 
-.navbar {
-    display: flex;
-    gap: 20px;
-}
-
-.navbar button {
-    background-color: #ffffff;
-    color: #66bb6a;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar button:hover {
-    background-color: #66bb6a; /* Verde suave */
-    color: white;
-}
-
-h1 {
+.header h1 {
+    font-family: 'Montserrat', sans-serif; /* Usar Montserrat para h1 */
+    font-size: 3rem;
+    font-weight: 700;
     margin: 0;
-    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-h2 {
-    margin: 20px 0 10px;
-    font-size: 2em;
-    color: #388e3c; /* Verde claro */
+/* Barra de navegación */
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-h3 {
-    font-size: 1.5em;
-    color: #2e7d32; /* Verde oscuro */
+.navbar a:hover {
+    color: #ea5455;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
-main {
-    padding: 40px;
-}
-
+/* Secciones principales */
 .content-section {
-    display: none; /* Ocultar secciones por defecto */
-    background-color: #f1f8e9; /* Fondo claro para las secciones */
-    padding: 20px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
-    margin: 15px 0; /* Espaciado entre secciones */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: row; /* Poner los elementos en fila: texto a la izquierda, imagen a la derecha */
+    align-items: center; /* Centrar verticalmente el texto y la imagen */
+    justify-content: space-between; /* Separar los elementos a ambos extremos */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1600px; /* Limitar el ancho máximo de la sección */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilo del texto en las secciones */
 .content-section h2 {
-    color: #388e3c; /* Verde claro */
+    font-size: 2rem;
+    color: #146173;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .content-section p {
-    font-size: 1.1em; /* Tamaño de letra más grande */
-    line-height: 1.6; /* Espaciado entre líneas */
-    color: #333; /* Color de texto oscuro */
+    font-size: 1.1rem;
+    color: #555;
+    text-align: left; /* Alinear el texto a la izquierda */
+    max-width: 50%; /* Limitar el ancho máximo del texto */
+    margin-right: 0px; /* Separar el texto de la imagen */
 }
 
+/* Imágenes */
+figure img {
+    /*width: 500px; 
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+*/
+
+    width: 500px; /* Tamaño fijo para las imágenes */
+    height: 300px; /* Tamaño fijo para las imágenes */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente sin distorsionarse */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+}
+figure {
+    margin: 15px; /* Eliminar márgenes */
+    flex-shrink: 0; /* Evitar que la imagen se reduzca demasiado */
+}
+
+
+/* Pie de página */
 footer {
-    background-color: #66bb6a; /* Verde suave */
-    color: white;
+    background-color:#2dad75;
+    color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Botones */
+button {
+    background-color: #ea5455;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d43f3f;
+}
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column; /* Cambiar a disposición vertical en dispositivos pequeños */
+        align-items: center;
+    }
+
+    .content-section p {
+        max-width: 100%; /* Permitir que el texto ocupe todo el ancho */
+        margin-right: 0; /* Eliminar separación en dispositivos pequeños */
+        text-align: center; /* Centrar el texto */
+    }
+
+    figure img {
+        width: 100%; /* Hacer que la imagen ocupe todo el ancho disponible */
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    .content-section h2 {
+        font-size: 1.5rem;
+    }
+    .content-section p {
+        font-size: 1rem;
+    }
 }
